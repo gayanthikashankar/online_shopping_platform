@@ -19,7 +19,9 @@ protected:
 
 public:
     //constructor
-    Product(std::string n, double p) : name(n), price(p) {
+    Product(std::string n, double p) {
+        this->name = n;
+        this->price = p;
         totalProducts++;
     }
     
@@ -62,7 +64,10 @@ private:
     
 public:
     Electronics(std::string n, double p, std::string b, int w)
-        : Product(n, p), brand(b), warrantyMonths(w) {}
+        : Product(n, p) {
+        this->brand = b;
+        this->warrantyMonths = w;
+    }
     
     void displayDetails() const /* override */ {
         std::cout << "Electronics: " << name << ", Brand: " << brand
@@ -77,7 +82,10 @@ private:
     
 public:
     Clothing(std::string n, double p, std::string s, std::string m)
-        : Product(n, p), size(s), material(m) {}
+        : Product(n, p) {
+        this->size = s;
+        this->material = m;
+    }
     
     void displayDetails() const {
         std::cout << "Clothing: " << name << ", Size: " << size
@@ -92,7 +100,10 @@ private:
     
 public:
     Book(std::string n, double p, std::string a, int pg)
-        : Product(n, p), author(a), pages(pg) {}
+        : Product(n, p) {
+        this->author = a;
+        this->pages = pg;
+    }
     
     void displayDetails() const {
         std::cout << "Book: " << name << ", Author: " << author
@@ -168,7 +179,9 @@ private:
     std::stack<std::shared_ptr<Product> > orderHistory; 
     
 public:
-    User(std::string name) : username(name) {}
+    User(std::string name) {
+        this->username = name;
+    }
     
     std::string getUsername() const { return username; }
     
