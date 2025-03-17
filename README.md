@@ -37,4 +37,3 @@ g++ online_shopping.cpp -o shopping_platform
 6. Demonstrates the queue system for order processing
 7. Shows dynamic memory allocation and proper cleanup
 
-# cpp_project
